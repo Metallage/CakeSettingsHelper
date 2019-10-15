@@ -9,11 +9,12 @@ namespace CakeSettingsHelper
 {
     class SettingsParser 
     {
-        private List<Setting> ParseSettings(string jsonText)
+        private MySettings ParseSettings(string jsonText)
         {
+            MySettings mySettings = MySettings.GetInstance();
+
             
-            
-            return new List<Setting>();
+            return mySettings;
         }
 
         private Dictionary<string, string> FormDictionary(List<Setting> settings)
