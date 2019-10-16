@@ -7,10 +7,9 @@ using Newtonsoft.Json.Linq;
 
 namespace CakeSettingsHelper
 {
-    class SettingsHelper:ISettings
+    public class SettingsHelper:ISettings
     {
-        private Dictionary<string, string> settings = new Dictionary<string, string>();
-
+        
         private string filePath;
 
         private JObject settingsFile;
@@ -51,7 +50,7 @@ namespace CakeSettingsHelper
         private JObject LoadFile(string filePath)
         {
             JObject loaded = null;
-            if(!CheckFile(filePath))
+            if(CheckFile(filePath))
                 using (StreamReader sr = new StreamReader(filePath))
                 {
                     string jsonText = sr.ReadToEnd();
